@@ -23,9 +23,13 @@ type
     ntCaseLabel,
     ntCaseLabels,
     ntCaseSelector,
+    ntClassConstraint,
     ntConstant,
     ntConstants,
+    ntConstraints,
+    ntConstructorConstraint,
     ntContains,
+    ntDefault,
     ntDeref,
     ntDimension,
     ntDiv,
@@ -38,11 +42,13 @@ type
     ntEqual,
     ntExcept,
     ntExceptionHandler,
+    ntExports,
     ntExpression,
     ntExpressions,
     ntFDiv,
     ntField,
     ntFields,
+    ntFinalization,
     ntFinally,
     ntFor,
     ntFrom,
@@ -51,6 +57,7 @@ type
     ntGreater,
     ntGreaterEqual,
     ntGuid,
+    ntHelper,
     ntIdentifier,
     ntIf,
     ntImplementation,
@@ -58,6 +65,7 @@ type
     ntIn,
     ntIndexed,
     ntInherited,
+    ntInitialization,
     ntInterface,
     ntIs,
     ntLabel,
@@ -65,6 +73,7 @@ type
     ntLiteral,
     ntLower,
     ntLowerEqual,
+    ntMessage,
     ntMethod,
     ntMod,
     ntMul,
@@ -85,6 +94,7 @@ type
     ntPublished,
     ntRaise,
     ntRead,
+    ntRecordConstraint,
     ntRepeat,
     ntRequires,
     ntReturnType,
@@ -104,6 +114,7 @@ type
     ntType,
     ntTypeArgs,
     ntTypeDecl,
+    ntTypeParam,
     ntTypeParams,
     ntTypeSection,
     ntValue,
@@ -116,6 +127,21 @@ type
     ntWhile,
     ntWith,
     ntWrite
+  );
+
+  TAttributeName = (
+    anType,
+    anClass,
+    anForwarded,
+    anKind,
+    anName,
+    anVisibility,
+    anCallingConvention,
+    anPath,
+    anMethodBinding,
+    anReintroduce,
+    anOverload,
+    anAbstract
   );
 
 const
@@ -139,9 +165,13 @@ const
     'caselabel',
     'caselabels',
     'caseselector',
+    'classconstraint',
     'constant',
     'constants',
+    'constraints',
+    'constructorconstraint',
     'contains',
+    'default',
     'deref',
     'dimension',
     'div',
@@ -154,11 +184,13 @@ const
     'equal',
     'except',
     'exceptionhandler',
+    'exports',
     'expression',
     'expressions',
     'fdiv',
     'field',
     'fields',
+    'finalization',
     'finally',
     'for',
     'from',
@@ -167,6 +199,7 @@ const
     'greater',
     'greaterequal',
     'guid',
+    'helper',
     'identifier',
     'if',
     'implementation',
@@ -174,6 +207,7 @@ const
     'in',
     'indexed',
     'inherited',
+    'initialization',
     'interface',
     'is',
     'label',
@@ -181,6 +215,7 @@ const
     'literal',
     'lower',
     'lowerequal',
+    'message',
     'method',
     'mod',
     'mul',
@@ -201,6 +236,7 @@ const
     'published',
     'raise',
     'read',
+    'recordconstraint',
     'repeat',
     'requires',
     'returntype',
@@ -220,6 +256,7 @@ const
     'type',
     'typeargs',
     'typedecl',
+    'typeparam',
     'typeparams',
     'typesection',
     'value',
@@ -234,15 +271,32 @@ const
     'write'
   );
 
-
 const
-  sENUM     = 'enum';
-  sNAME     = 'name';
-  sPATH     = 'path';
-  sSUBRANGE = 'subrange';
-  sTYPE     = 'type';
-  sVALUE    = 'value';
+  sENUM              = 'enum';
+  sSUBRANGE          = 'subrange';
+
+  function AttributeNameToStr(const AttributeName : TAttributeName) : string;
 
 implementation
+
+function AttributeNameToStr(const AttributeName : TAttributeName) : string;
+const
+  AttributeNameStrings : array[TAttributeName] of string = (
+    'type',
+    'class',
+    'forwarded',
+    'kind',
+    'name',
+    'visibility',
+    'callingconvention',
+    'path',
+    'methodbinding',
+    'reintroduce',
+    'overload',
+    'abstract'
+  );
+begin
+  Exit(AttributeNameStrings[AttributeName]);
+end;
 
 end.
