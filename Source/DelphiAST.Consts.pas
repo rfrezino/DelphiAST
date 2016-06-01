@@ -45,6 +45,7 @@ type
     ntExports,
     ntExpression,
     ntExpressions,
+    ntExternal,
     ntFDiv,
     ntField,
     ntFields,
@@ -63,6 +64,7 @@ type
     ntImplementation,
     ntImplements,
     ntIn,
+    ntIndex,
     ntIndexed,
     ntInherited,
     ntInitialization,
@@ -97,6 +99,7 @@ type
     ntRecordConstraint,
     ntRepeat,
     ntRequires,
+    ntResourceString,
     ntReturnType,
     ntRHS,
     ntRoundClose,
@@ -106,6 +109,8 @@ type
     ntShr,
     ntStatement,
     ntStatements,
+    ntStrictPrivate,
+    ntStrictProtected,
     ntSub,
     ntSubrange,
     ntThen,
@@ -126,7 +131,11 @@ type
     ntUses,
     ntWhile,
     ntWith,
-    ntWrite
+    ntWrite,
+
+    ntAnsiComment,
+    ntBorComment,
+    ntSlashesComment
   );
 
   TAttributeName = (
@@ -187,6 +196,7 @@ const
     'exports',
     'expression',
     'expressions',
+    'external',
     'fdiv',
     'field',
     'fields',
@@ -205,6 +215,7 @@ const
     'implementation',
     'implements',
     'in',
+    'index',
     'indexed',
     'inherited',
     'initialization',
@@ -239,6 +250,7 @@ const
     'recordconstraint',
     'repeat',
     'requires',
+    'resourcestring',
     'returntype',
     'rhs',
     'roundclose',
@@ -248,6 +260,8 @@ const
     'shr',
     'statement',
     'statements',
+    'strictprivate', 
+    'strictprotected',
     'sub',
     'subrange',
     'then',
@@ -268,7 +282,11 @@ const
     'uses',
     'while',
     'with',
-    'write'
+    'write',
+
+    'ansicomment',
+    'borlandcomment',
+    'slashescomment'
   );
 
 const
